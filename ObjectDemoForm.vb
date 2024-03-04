@@ -1,11 +1,11 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-
+'Exit button that unloads the form back to the welcoming form when clicked
 Public Class ObjectDemoForm
     Private Sub ExitButton_Click(Sender As Object, e As EventArgs) Handles ExitButton.Click
         Close()
     End Sub
 
-
+'Load button used to load a picture to the picture box control of the form when clicked 
     Private Sub LoadPictureButton_Click(sender As Object, e As EventArgs) Handles LoadPictureButton.Click
         Dim openFileDialog As New OpenFileDialog()
         openFileDialog.Filter = "Image Files|*.bmp;*.jpg;*.jpeg;*.png;*.gif"
@@ -15,7 +15,7 @@ Public Class ObjectDemoForm
         End If
     End Sub
 
-
+'Checkbox buttons to change the font style property of the sample test
     Private Sub CheckBoxFont_CheckedChanged(sender As Object, e As EventArgs) Handles ItalicCheckBox.CheckedChanged, BoldCheckBox.CheckedChanged, BoldItalicCheckBox.CheckedChanged
         Dim selectedCheckBox As CheckBox = DirectCast(sender, CheckBox)
 
@@ -31,8 +31,9 @@ Public Class ObjectDemoForm
         SampleTestBox.Font = New Font(SampleTestBox.Font.FontFamily, SampleTestBox.Font.Size, fontStyle)
     End Sub
 
-
+'To change the font property of the text in the sample test
     Private Sub RadioButtonFont_CheckedChanged(sender As Object, e As EventArgs) Handles GaramondRadioButton.CheckedChanged, MagnetoRadioButton.CheckedChanged, TahomaRadioButton.CheckedChanged
+
         Dim selectedRadioButton = DirectCast(sender, RadioButton)
 
         Dim fontFamily As String
@@ -53,6 +54,7 @@ Public Class ObjectDemoForm
     End Sub
 
 
+    'To change the font colour property of the text in the sample test 
     Private Sub GreenRadioButton_CheckedChanged(Sender As Object, e As EventArgs) Handles GreenRadioButton.CheckedChanged
 
         If GreenRadioButton.Checked Then
